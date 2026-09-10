@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Une feuille de route pratique pour passer de Senior Software Engineer a Founder / CTO.">
+  <meta name="theme-color" content="#163047">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%23087f80%22/><text x=%2250%22 y=%2266%22 font-size=%2250%22 font-family=%22sans-serif%22 font-weight=%22700%22 fill=%22%23fff%22 text-anchor=%22middle%22>EF</text></svg>">
+  <title>Engineer to Founder | Feuille de route</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+    :root { --ink:#17212b; --muted:#64717d; --paper:#fbfaf7; --surface:#fff; --line:#e4e7e9; --navy:#163047; --teal:#087f80; --teal-soft:#e5f4f1; --coral:#ed765d; --yellow:#f5c85b; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; color:var(--ink); background:var(--paper); font:16px/1.7 'DM Sans',sans-serif; }
+    a { color:inherit; }
+    .shell { width:min(1160px,calc(100% - 40px)); margin:auto; }
+    .topbar { display:flex; align-items:center; justify-content:space-between; padding:24px 0; border-bottom:1px solid var(--line); }
+    .brand { display:flex; align-items:center; gap:11px; font-weight:700; letter-spacing:-.02em; }
+    .brand-mark { display:grid; place-items:center; width:34px; height:34px; border-radius:10px; color:#fff; background:var(--teal); font-family:'Space Grotesk',sans-serif; }
+    .topbar span:last-child { color:var(--muted); font-size:.82rem; }
+    .hero { padding:78px 0 64px; position:relative; overflow:hidden; }
+    .hero::after { content:''; position:absolute; width:300px; height:300px; right:-100px; top:20px; border:1px solid #dcebe6; border-radius:50%; box-shadow:0 0 0 34px #f4f7f1,0 0 0 68px #faf5e9; z-index:-1; }
+    .eyebrow { display:inline-flex; align-items:center; gap:8px; color:var(--teal); font-size:.74rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; }
+    .eyebrow::before { content:''; width:28px; height:2px; background:var(--coral); }
+    h1,h2,h3 { font-family:'Space Grotesk',sans-serif; line-height:1.1; letter-spacing:-.045em; }
+    h1 { max-width:760px; margin:18px 0 22px; color:var(--navy); font-size:clamp(2.8rem,7vw,5.8rem); }
+    .hero-lead { max-width:680px; margin:0; color:var(--muted); font-size:1.15rem; }
+    .hero-note { display:flex; gap:14px; align-items:flex-start; max-width:700px; margin-top:32px; padding:18px 20px; border-left:3px solid var(--coral); background:#fff5ed; }
+    .hero-note strong { color:var(--navy); }
+    .layout { display:grid; grid-template-columns:210px minmax(0,1fr); gap:64px; align-items:start; }
+    .toc { position:sticky; top:24px; padding:18px 0; border-top:2px solid var(--navy); }
+    .toc-label { margin-bottom:12px; color:var(--muted); font-size:.72rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; }
+    .toc a { display:block; padding:7px 0; color:var(--muted); font-size:.86rem; text-decoration:none; }
+    .toc a:hover { color:var(--teal); }
+    .toc a.active { color:var(--navy); font-weight:600; }
+    main { min-width:0; }
+    .section { padding:5px 0 72px; scroll-margin-top:30px; }
+    .section + .section { border-top:1px solid var(--line); padding-top:64px; }
+    .section-kicker { color:var(--coral); font-size:.76rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; }
+    h2 { margin:8px 0 18px; color:var(--navy); font-size:clamp(1.8rem,3vw,2.6rem); }
+    h3 { margin:34px 0 8px; color:var(--navy); font-size:1.25rem; }
+    p { margin:0 0 18px; }
+    .muted { color:var(--muted); }
+    .intro,.callout { padding:26px 28px; border:1px solid #cce6df; border-radius:3px; background:var(--teal-soft); }
+    .intro { display:grid; grid-template-columns:1fr 1fr; gap:24px; margin:28px 0 30px; }
+    .intro p { margin:0; }
+    .diagram { margin:30px 0; padding:30px; overflow-x:auto; border:1px solid var(--line); border-radius:4px; background:var(--navy); color:#d8eee9; font:500 .9rem/1.45 ui-monospace,SFMono-Regular,Consolas,monospace; white-space:pre; }
+    .diagram .accent { color:var(--yellow); }
+    .book-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; margin-top:26px; }
+    .book { display:block; padding:22px; border:1px solid var(--line); border-radius:3px; background:var(--surface); box-shadow:0 6px 18px rgba(27,43,54,.03); text-decoration:none; cursor:pointer; transition:transform .15s ease,box-shadow .15s ease; }
+    .book:hover, .book:focus-visible { transform:translateY(-3px); box-shadow:0 12px 26px rgba(27,43,54,.09); }
+    .book:first-child { border-top:3px solid var(--coral); }
+    .book:nth-child(2) { border-top:3px solid var(--yellow); }
+    .book:nth-child(3) { border-top:3px solid var(--teal); }
+    .book:nth-child(4),.book:nth-child(5) { border-top:3px solid var(--navy); }
+    .book h3 { margin-top:0; }
+    .book p { color:var(--muted); font-size:.94rem; }
+    .book-open { display:inline-block; margin-top:4px; color:var(--teal); font-size:.82rem; font-weight:700; }
+    blockquote { margin:22px 0; padding:16px 20px; border-left:3px solid var(--yellow); background:#fff9e8; color:var(--navy); font-weight:600; }
+    .table-wrap { overflow-x:auto; margin-top:24px; border:1px solid var(--line); }
+    table { width:100%; min-width:570px; border-collapse:collapse; background:var(--surface); }
+    th,td { padding:16px 18px; border-bottom:1px solid var(--line); text-align:left; }
+    th { color:var(--muted); background:#f2f5f3; font-size:.74rem; letter-spacing:.09em; text-transform:uppercase; }
+    tr:last-child td { border-bottom:0; }
+    td:first-child { color:var(--teal); font-weight:700; }
+    .skills { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin:28px 0; }
+    .skill { padding:18px; border-top:2px solid var(--teal); background:var(--surface); }
+    .skill strong { display:block; margin-bottom:5px; color:var(--navy); }
+    .skill span { color:var(--muted); font-size:.86rem; }
+    .steps { counter-reset:step; list-style:none; padding:0; }
+    .steps li { display:grid; grid-template-columns:38px 1fr; gap:14px; align-items:start; margin:0; padding:14px 0; border-bottom:1px solid var(--line); }
+    .steps li::before { counter-increment:step; content:counter(step,decimal-leading-zero); color:var(--coral); font:700 .8rem 'Space Grotesk',sans-serif; }
+    .closing { margin-top:18px; padding:26px; border-left:4px solid var(--coral); background:var(--navy); color:#fff; }
+    .closing strong { color:var(--yellow); }
+    footer { margin-top:10px; padding:28px 0 44px; border-top:1px solid var(--line); color:var(--muted); font-size:.82rem; }
+    @media (max-width:800px) {
+      .shell { width:min(100% - 32px,680px); }
+      .topbar { padding:17px 0; }
+      .topbar span:last-child { display:none; }
+      .hero { padding:54px 0 48px; }
+      .hero::after { right:-170px; opacity:.55; }
+      .layout { display:block; }
+      .toc { position:static; display:flex; gap:14px; overflow-x:auto; margin-bottom:52px; padding:12px 0; border-bottom:1px solid var(--line); border-top:2px solid var(--navy); white-space:nowrap; }
+      .toc-label { display:none; }
+      .toc a { padding:0; }
+      .intro,.book-grid { grid-template-columns:1fr; }
+      .skills { grid-template-columns:repeat(2,1fr); }
+    }
+    @media (max-width:480px) {
+      .shell { width:min(100% - 24px,680px); }
+      h1 { font-size:2.65rem; }
+      .intro,.callout,.diagram { padding:20px; }
+      .section { padding-bottom:54px; }
+      .skills { grid-template-columns:1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="shell topbar">
+    <div class="brand"><span class="brand-mark">EF</span><span>Engineer to Founder</span></div>
+    <span>Feuille de route personnelle · 2026</span>
+  </header>
+  <div class="shell hero">
+    <span class="eyebrow">Positionnement &amp; progression</span>
+    <h1>Passer de Senior Engineer à Founder / CTO.</h1>
+    <p class="hero-lead">Une trajectoire concrète pour transformer une expertise technique en produit, en équipe et en entreprise durable.</p>
+    <div class="hero-note"><span aria-hidden="true">→</span><span>L’objectif n’est pas d’apprendre Jira. C’est de comprendre <strong>quoi construire, pour qui, pourquoi et comment le financer</strong>.</span></div>
+  </div>
+  <div class="shell layout">
+    <nav class="toc" aria-label="Sommaire">
+      <div class="toc-label">Dans ce guide</div>
+      <a href="#vision">01 Vision</a><a href="#livres">02 Livres</a><a href="#jira">03 Exécution</a><a href="#competences">04 Compétences</a><a href="#strategie">05 Stratégie</a>
+    </nav>
+    <main>
+      <section class="section" id="vision">
+        <span class="section-kicker">01 · Le cap</span><h2>La vision de la future société</h2>
+        <div class="intro"><p>Le <strong>projet principal d’IA</strong> devient le produit stratégique à long terme.</p><p>Des <strong>projets commerciaux ciblés</strong> génèrent des revenus et financent progressivement la société.</p></div>
+        <div class="diagram" aria-hidden="true">SOCIÉTÉ
+  ├── <span class="accent">PRODUIT IA</span> · stratégique
+  │   └── Product · Roadmap · Backlog · Sprint · Jira
+  └── <span class="accent">PROJETS COMMERCIAUX</span>
+      └── Clients · Revenus · Cash-flow</div>
+        <p class="muted">Les petits projets servent à obtenir des clients, créer du cash-flow et apprendre. Le produit IA construit la valeur stratégique sur le long terme.</p>
+      </section>
+      <section class="section" id="livres">
+        <span class="section-kicker">02 · Les fondamentaux</span><h2>Les livres à lire dans cet ordre</h2>
+        <div class="book-grid">
+          <a class="book" href="The-Mom-Test-by-%40robfitz.pdf" target="_blank" rel="noopener"><h3>01 · The Mom Test</h3><p><strong>Rob Fitzpatrick</strong></p><p>Comprendre les vrais problèmes des clients avant de développer une solution.</p><span class="book-open">Ouvrir le PDF →</span></a>
+          <a class="book" href="The%20Lean%20Startup%20-%20Erick%20Ries%20(1).pdf" target="_blank" rel="noopener"><h3>02 · The Lean Startup</h3><p><strong>Eric Ries</strong></p><p>Tester rapidement une idée et apprendre avant d’investir trop de temps et d’argent.</p><span class="book-open">Ouvrir le PDF →</span></a>
+          <a class="book" href="Inspired%20-%20Marty%20Cagan.pdf" target="_blank" rel="noopener"><h3>03 · Inspired</h3><p><strong>Marty Cagan</strong></p><p>Construire un véritable produit, et pas seulement une application techniquement fonctionnelle.</p><span class="book-open">Ouvrir le PDF →</span></a>
+          <a class="book" href="2477the-hard-thing-about-hard-things.pdf" target="_blank" rel="noopener"><h3>04 · The Hard Thing About Hard Things</h3><p><strong>Ben Horowitz</strong></p><p>Comprendre le recrutement, le management, les crises et la croissance.</p><span class="book-open">Ouvrir le PDF →</span></a>
+          <a class="book" href="High%20Output%20Management%20-%20Andrew%20S.%20Grove.pdf" target="_blank" rel="noopener"><h3>05 · High Output Management</h3><p><strong>Andrew Grove</strong></p><p>Organiser le travail d’une équipe autour d’objectifs et d’indicateurs.</p><span class="book-open">Ouvrir le PDF →</span></a>
+        </div>
+        <blockquote>« Quel problème résoudre et pourquoi quelqu’un va payer ? »</blockquote>
+        <p>Le changement de mentalité consiste à ne plus réfléchir uniquement à la technologie, mais à relier problème, utilisateur, solution et business.</p>
+        <div class="table-wrap"><table><thead><tr><th scope="col">Ordre</th><th scope="col">Livre</th><th scope="col">Compétence principale</th></tr></thead><tbody>
+          <tr><td>01</td><td>The Mom Test</td><td>Comprendre les besoins des clients</td></tr><tr><td>02</td><td>The Lean Startup</td><td>Tester et construire un MVP</td></tr><tr><td>03</td><td>Inspired</td><td>Construire un vrai produit</td></tr><tr><td>04</td><td>The Hard Thing About Hard Things</td><td>Diriger une entreprise</td></tr><tr><td>05</td><td>High Output Management</td><td>Manager efficacement</td></tr>
+        </tbody></table></div>
+      </section>
+      <section class="section" id="jira">
+        <span class="section-kicker">03 · L’exécution</span><h2>Jira est un outil, pas la destination</h2><p>Pour chaque produit, l’exécution doit rester reliée à une décision business :</p>
+        <div class="diagram" aria-hidden="true">Vision → Objectifs → Roadmap → Épics → Stories / Tasks / Bugs
+  → Backlog → Sprint → Développement → Review → Test
+  → Production → <span class="accent">Feedback client</span></div>
+        <div class="callout"><strong>Règle de pilotage :</strong> chaque ticket doit contribuer à un objectif observable, mesurable et utile pour un utilisateur ou pour l’entreprise.</div>
+      </section>
+      <section class="section" id="competences">
+        <span class="section-kicker">04 · Le changement de rôle</span><h2>Les quatre dimensions à développer</h2><p class="muted">La technique est déjà un socle solide. Le prochain niveau consiste à élargir le champ des décisions.</p>
+        <div class="skills"><div class="skill"><strong>Product</strong><span>Choisir quoi construire et pourquoi.</span></div><div class="skill"><strong>Business</strong><span>Vendre et comprendre les revenus.</span></div><div class="skill"><strong>Management</strong><span>Faire grandir une équipe.</span></div><div class="skill"><strong>Finance</strong><span>Contrôler coûts, trésorerie et investissements.</span></div></div>
+        <div class="diagram" aria-hidden="true">Senior Engineer  →  « Comment construire ? »
+             ↓
+        Tech Lead       →  « Comment organiser l’équipe ? »
+             ↓
+        CTO             →  « Quelle architecture sert le produit ? »
+             ↓
+        Founder / CTO   →  « Quel problème, quel client, quel modèle ? »</div>
+      </section>
+      <section class="section" id="strategie">
+        <span class="section-kicker">05 · Le premier mouvement</span><h2>Une stratégie pragmatique</h2>
+        <ol class="steps"><li>Identifier un problème réel chez des clients.</li><li>Créer quelques produits simples et vendables.</li><li>Utiliser les revenus pour créer un premier cash-flow.</li><li>Construire progressivement le produit IA stratégique.</li><li>Mesurer utilisateurs, revenus, coûts et croissance.</li><li>Recruter lorsque le revenu ou le financement le permet.</li><li>Professionnaliser Jira, Git, CI/CD, documentation et processus.</li></ol>
+        <div class="closing"><strong>Point de départ recommandé :</strong><br>The Mom Test → The Lean Startup → Inspired.</div>
+      </section>
+    </main>
+  </div>
+  <footer class="shell">Une feuille de route pour devenir constructeur de produit, manager, vendeur, décideur et entrepreneur.</footer>
+  <script>
+    (function () {
+      var links = Array.prototype.slice.call(document.querySelectorAll('.toc a'));
+      var sections = links
+        .map(function (link) { return document.getElementById(link.getAttribute('href').slice(1)); })
+        .filter(Boolean);
+      if (!('IntersectionObserver' in window) || !sections.length) return;
+
+      function setActive(id) {
+        links.forEach(function (link) {
+          var isActive = link.getAttribute('href') === '#' + id;
+          link.classList.toggle('active', isActive);
+          if (isActive) link.setAttribute('aria-current', 'true');
+          else link.removeAttribute('aria-current');
+        });
+      }
+
+      var observer = new IntersectionObserver(function (entries) {
+        var visible = entries.filter(function (e) { return e.isIntersecting; });
+        if (visible.length) setActive(visible[0].target.id);
+      }, { rootMargin: '-20% 0px -70% 0px' });
+
+      sections.forEach(function (section) { observer.observe(section); });
+    })();
+  </script>
+</body>
+</html>
